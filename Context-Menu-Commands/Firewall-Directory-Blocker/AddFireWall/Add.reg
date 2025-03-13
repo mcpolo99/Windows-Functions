@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\RunFireWallAddScript]
+@="Run FireWallAdd Script"
+"Icon"="powershell.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\RunFireWallAddScript\command]
+@="cmd.exe /s,/c, C:\\Windows\\Scripts\\AddFireWall\\run.bat \"%V\" "
+
