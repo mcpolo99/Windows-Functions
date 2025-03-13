@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\shell\RenameProjectFolder]
+@="Rename Project Folder"
+"Icon"="C:\\Windows\\System32\\shell32.dll,137"
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\shell\RenameProjectFolder\command]
+@="cmd.exe /c powershell -ExecutionPolicy Bypass -File \"C:\\Windows\\scripts\\RenameProjectFolderAndXML\\RenameProjectFolderAndXML.ps1\" \"%1\""
