@@ -1,6 +1,6 @@
 will add installer to add to context menu. 
 
-For the moment being use :
+For the moment being use the "MKLinkCreator.exe":
 
 MK Link Creator Help
 
