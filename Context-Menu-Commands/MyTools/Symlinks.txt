@@ -1,0 +1,5 @@
+Symlinks Is ONLY PERSISTANT on one PC at a time?
+
+
+
+https://www.howtogeek.com/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/

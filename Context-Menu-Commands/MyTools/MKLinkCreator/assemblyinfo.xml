@@ -1,0 +1,11 @@
+<assemblyinfo>
+  <AssemblyProduct>MKLinkCreator</AssemblyProduct>
+  <AssemblyVersion>1.1.1.14</AssemblyVersion>
+  <AssemblyCopyright>PolosAB</AssemblyCopyright>
+  <AssemblyIcon>X:\02Development\01Source\02-Microsoft\Windows-Functions\Context-Menu-Commands\MyTools\MKLinkCreator\main.ico</AssemblyIcon>
+  <AssemblyDescription>MK Link Creator</AssemblyDescription>
+  <AssemblyFile>X:\02Development\01Source\02-Microsoft\Windows-Functions\Context-Menu-Commands\MyTools\MKLinkCreator\MKLinkCreator.ps1</AssemblyFile>
+  <AssemblyCulture>sv-SE</AssemblyCulture>
+  <AssemblyTrademark>PolosAB</AssemblyTrademark>
+  <AssemblyCompany>PolosAB</AssemblyCompany>
+</assemblyinfo>
