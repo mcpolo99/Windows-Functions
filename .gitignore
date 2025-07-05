@@ -1,0 +1,7 @@
+
+**/logs/*
+# **/assemblyinfo.xml
+**/*.exe
+**/logs
+**/bin/
+**/*.vscode
