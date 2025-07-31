@@ -4,7 +4,7 @@
 param (
     [switch]$help,
     [ValidateSet("info", "error", "debug")]
-    [string]$loglevel = "info",
+    [string]$loglevel = "debug",
     # [string]$folderPath = (Get-Location)
     [string]$folderPath = $pwd.path
 )
@@ -72,10 +72,11 @@ $logger.info("Script started with log level: $loglevel")
 
 # Initialization
 $script:winrarPath = "C:\Program Files\WinRAR\WinRAR.exe"  # Default WinRAR path
+$rarPath = "D:\Program Files\WinRAR"  # Default WinRAR path
 
 
 
-
+#Get the winrar EXE path
 if (-Not (Test-Path $winrarPath)) {
     $logger.Warning("winrar was not found in default path, will search for it.")
     $search = [AppUtility]::Get_AppPath("Winrar")
@@ -136,6 +137,8 @@ foreach ($folder in $folders) {
 
     }
 }
+
+
 $logger.Debug("versionedFolders $($versionedFolders | ConvertTo-Json -Depth 3)")
 # Filter out null or empty versions just in case
 $script:versionedFolders = $script:versionedFolders.GetEnumerator() | Where-Object { $_.Value -ne $null -and $_.Value -ne "" }
@@ -157,26 +160,47 @@ if ($highest) {
 
 
 
-# SFX Archive Creation
-## CHECK IF sfx exsists
+# # SFX Archive Creation
+# # CHECK IF sfx exsists
 $sfxFilePath = Join-Path $pwd.path "sfx.txt"
 if (Test-Path $sfxFilePath) {
     Remove-Item $sfxFilePath
 }
 
+# # License.txt
 
+$sfxLicense = Join-Path $pwd.path "License.txt"
+
+if (Test-Path $sfxLicense) {
+    $fileContent = Get-Content -Path $sfxLicense -Raw
+    # Concatenate into the desired format
+    $string1 = @"
+License=End user license agreement
+{
+$fileContent
+}
+"@
+}else{
+    $string1=""
+}
 
 
 # Create SFX properties
 $sfxContent = @"
 ;The comment below contains SFX script commands
-Path=C:\Biesse\bSuite\Macro
+Path=C:\Biesse\bSuite\Macro\
 Text=  This will extract Macro "$($script:baseFolderName)" to: C:\Biesse\bSuite\Macro\
 Title=$($script:baseFolderName) REV $($highest.Value)
 Overwrite=1
 Silent=0
-License= License and Agreement
+$string1
 "@
+
+
+
+# License=License and Agreement
+# License.txt
+#License= License and Agreement
 # Presetup=<hide>PowerShell -Command "Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('CLOSE BSOLID!!!!')"
 # Setup=<hide>PowerShell -Command "Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('RESTART BSOLID!!!!')"
 
@@ -190,10 +214,16 @@ Copy-Item -Path "$($highest.Key)" -Destination "$($script:baseFolderName)" -Recu
 
 # Compilation Command
 $exeFileName = "$($highest.Key).exe"
-$compilationCommand = "`"$winrarPath\winrar.exe`" a -sfx -r -z`"$sfxFilePath`" $exeFileName .\$($script:baseFolderName) "
+# $compilationCommand = "`"$winrarPath\winrar.exe`" a -sfx -r  -z`"$sfxFilePath`" $exeFileName .\$($script:baseFolderName) "
 
-$arguments = "a -sfx -r -z`"$sfxFilePath`" $exeFileName .\$($script:baseFolderName)"
-Start-Process -FilePath "$winrarPath\rar.exe" `
+# .\Rar.exe a -sfx -r -license .\license.txt -z"sfx.txt" .\abcd.exe .\ABC
+
+# module: `"$winrarPath\WinCon.sfx`"
+
+# $arguments = "a -sfx -r -z`"$sfxFilePath`" $exeFileName .\$($script:baseFolderName) -license`"license.txt`"" 
+$arguments = "a -sfx -r -z`"$sfxFilePath`" $exeFileName .\$($script:baseFolderName) license.txt" 
+
+Start-Process -FilePath "$winrarPath\Winrar.exe" `
               -ArgumentList $arguments `
               -NoNewWindow `
               -Wait `

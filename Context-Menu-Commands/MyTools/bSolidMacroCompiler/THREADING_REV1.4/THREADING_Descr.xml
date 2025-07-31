@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Variables>
+  <Variable Name="THREAD_TAP_OVM" Descr="" />
+  <Variable Name="VARIABLE" Descr="" />
+  <Variable Name="CX_POS" Descr="" />
+  <Variable Name="CY_POS" Descr="" />
+  <Variable Name="THREAD_DIAMETER_HELPER" Descr="" />
+  <Variable Name="THREAD_DIAMETER_MIN" Descr="" />
+  <Variable Name="THREAD_DIAMETER" Descr="" />
+  <Variable Name="THREAD_PROFILE_HEIGHT" Descr="" />
+  <Variable Name="THREAD_TAP_PROFILE_LAND" Descr="" />
+  <Variable Name="THREAD_PITCH" Descr="" />
+  <Variable Name="THREAD_CRC_BOOL" Descr="" />
+  <Variable Name="THREAD_CRC" Descr="" />
+  <Variable Name="THREAD_RV" Descr="VÄNSTER HÖGER" />
+  <Variable Name="THREAD_TNM_DP" Descr="" />
+  <Variable Name="THREAD_OVM_HELPER" Descr="" />
+  <Variable Name="THREAD_VTR_HELPER" Descr="" />
+  <Variable Name="THREAD_VTR" Descr="" />
+  <Variable Name="THREAD_DVR_OVERSHOOT" Descr="" />
+  <Variable Name="THREAD_DVR" Descr="" />
+  <Variable Name="TNM_SKRUB_OVM" Descr="" />
+  <Variable Name="V1" Descr="" />
+  <Variable Name="V2" Descr="" />
+  <Variable Name="V3" Descr="" />
+  <Variable Name="V4" Descr="" />
+  <Variable Name="V5" Descr="" />
+  <Variable Name="V6" Descr="" />
+  <Variable Name="CZ_POS" Descr="" />
+  <Variable Name="THREAD_DP" Descr="" />
+  <Variable Name="COUNTERBORE_DP" Descr="Försänkning Djup" />
+  <Variable Name="COUNTERBORE_W" Descr="Försänkning Bredd" />
+  <Variable Name="COUNTERBORE_R_HELPER" Descr="" />
+  <Variable Name="CZ_POS_CB" Descr="" />
+  <Variable Name="COUNTERBORE_OVM" Descr="" />
+  <Variable Name="COUNTERBORE_OVM_HELPER" Descr="" />
+  <Variable Name="COUNTERBORE_EXE" Descr="" />
+  <Variable Name="THREAD_OVM" Descr="Offset gänga Intern &amp; extern" />
+</Variables>

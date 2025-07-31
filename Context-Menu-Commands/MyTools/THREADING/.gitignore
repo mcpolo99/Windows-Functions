@@ -1,0 +1,7 @@
+.\THREADING*
+THREADING_REV1.4
+License.txt
+*.exe
+.\logs
+.\assassemblyinfo.xml
+assemblyinfo.xml
