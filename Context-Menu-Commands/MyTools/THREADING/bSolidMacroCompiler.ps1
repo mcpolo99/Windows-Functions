@@ -4,7 +4,7 @@
 param (
     [switch]$help,
     [ValidateSet("info", "error", "debug")]
-    [string]$loglevel = "debug",
+    [string]$loglevel = "info",
     # [string]$folderPath = (Get-Location)
     [string]$folderPath = $pwd.path
 )
@@ -168,9 +168,7 @@ if (Test-Path $sfxFilePath) {
 }
 
 # # License.txt
-
 $sfxLicense = Join-Path $pwd.path "License.txt"
-
 if (Test-Path $sfxLicense) {
     $fileContent = Get-Content -Path $sfxLicense -Raw
     # Concatenate into the desired format
@@ -196,15 +194,6 @@ Silent=0
 $string1
 "@
 
-
-
-# License=License and Agreement
-# License.txt
-#License= License and Agreement
-# Presetup=<hide>PowerShell -Command "Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('CLOSE BSOLID!!!!')"
-# Setup=<hide>PowerShell -Command "Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('RESTART BSOLID!!!!')"
-
-
 Set-Content -Path $sfxFilePath -Value $sfxContent
 
 if (Test-Path $($script:baseFolderName)) {
@@ -221,7 +210,7 @@ $exeFileName = "$($highest.Key).exe"
 # module: `"$winrarPath\WinCon.sfx`"
 
 # $arguments = "a -sfx -r -z`"$sfxFilePath`" $exeFileName .\$($script:baseFolderName) -license`"license.txt`"" 
-$arguments = "a -sfx -r -z`"$sfxFilePath`" $exeFileName .\$($script:baseFolderName) license.txt" 
+$arguments = "a -sfx -r -z`"$sfxFilePath`" $exeFileName .\$($script:baseFolderName)" 
 
 Start-Process -FilePath "$winrarPath\Winrar.exe" `
               -ArgumentList $arguments `
