@@ -15,6 +15,8 @@ function CheckPS2Exe {
         if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
             try {
                 Write-Host "Installing ps2exe module from PSGallery..."
+                # Add 
+                Set-ExecutionPolicy -ExecutionPolicy bypass -Scope Process
                 Install-Module -Name ps2exe -Scope CurrentUser -Force -AllowClobber
                 Write-Host "ps2exe installed successfully."
             } catch {
