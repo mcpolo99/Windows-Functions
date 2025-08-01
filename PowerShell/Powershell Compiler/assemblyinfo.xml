@@ -1,0 +1,12 @@
+<assemblyinfo>
+  <AssemblyProduct>PS Compiler</AssemblyProduct>
+  <AssemblyVersion>1.1.0.8</AssemblyVersion>
+  <AssemblyCopyright>
+  </AssemblyCopyright>
+  <AssemblyIcon>.\ico.ico</AssemblyIcon>
+  <AssemblyDescription>Compiler for Powershell scripts</AssemblyDescription>
+  <AssemblyFile>.\compile.ps1</AssemblyFile>
+  <AssemblyCulture>en-GB</AssemblyCulture>
+  <AssemblyTrademark> </AssemblyTrademark>
+  <AssemblyCompany>Polos AB</AssemblyCompany>
+</assemblyinfo>

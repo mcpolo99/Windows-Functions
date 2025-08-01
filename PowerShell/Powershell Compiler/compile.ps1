@@ -1,4 +1,4 @@
-﻿#compile: ps2exe '.\compile.ps1' .\Compile.exe -noConsole -STA -exitOnCancel -title 'compile'  -company 'Polos AB'  -product 'compiler' -version '1.0.1.0' -verbose
+﻿#compile: ps2exe '.\compile.ps1' .\Compile_new.exe -noConsole -STA -exitOnCancel -title 'compile'  -company 'Polos AB'  -product 'compiler' -version '1.0.1.0' -verbose
 
 
 Add-Type -AssemblyName System.Windows.Forms

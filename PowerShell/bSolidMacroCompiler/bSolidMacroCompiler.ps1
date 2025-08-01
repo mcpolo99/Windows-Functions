@@ -4,7 +4,7 @@
 param (
     [switch]$help,
     [ValidateSet("info", "error", "debug")]
-    [string]$loglevel = "info",
+    [string]$loglevel = "debug",
     # [string]$folderPath = (Get-Location)
     [string]$folderPath = $pwd.path
 )
@@ -71,22 +71,21 @@ $logger.info("Script started with log level: $loglevel")
 
 
 # Initialization
-$script:winrarPath = "C:\Program Files\WinRAR\WinRAR.exe"  # Default WinRAR path
-$rarPath = "D:\Program Files\WinRAR"  # Default WinRAR path
-
-
+$script:winrarPath = "C:\Program Files\WinRAR\"  # Default WinRAR path
+# $rarPath = "D:\Program Files\WinRAR"  # Default WinRAR path
 
 #Get the winrar EXE path
 if (-Not (Test-Path $winrarPath)) {
+
     $logger.Warning("winrar was not found in default path, will search for it.")
     $search = [AppUtility]::Get_AppPath("Winrar")
 
     if($search){
-        $logger.info("winrar was found.")
+        $logger.Info("winrar was found.")
         $logger.Debug($($search | ConvertTo-Json -Depth 3))
         $winrarPath = $search.InstallPath
     }else{
-        $logger.Error("Winrar could not be found, Please install WinRar")
+        $logger.Debug("Winrar could not be found, Please install WinRar")
         throw [System.IO.FileNotFoundException]::new("WinRAR executable was not found in the registry or default location.")
     }
 }

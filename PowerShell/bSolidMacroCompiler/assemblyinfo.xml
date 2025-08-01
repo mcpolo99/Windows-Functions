@@ -1,0 +1,14 @@
+<assemblyinfo>
+  <AssemblyProduct>bSolidMacroCompiler</AssemblyProduct>
+  <AssemblyVersion>1.0.0.10</AssemblyVersion>
+  <AssemblyCopyright>
+  </AssemblyCopyright>
+  <AssemblyIcon>
+  </AssemblyIcon>
+  <AssemblyDescription>bSolidMacroCompiler</AssemblyDescription>
+  <AssemblyFile>.\bSolidMacroCompiler.ps1</AssemblyFile>
+  <AssemblyCulture>en</AssemblyCulture>
+  <AssemblyTrademark>
+  </AssemblyTrademark>
+  <AssemblyCompany>POLOS AB</AssemblyCompany>
+</assemblyinfo>
